@@ -1,8 +1,9 @@
-let addBtn = document.querySelector(".dropdown-toggle");
-let drpMenu = document.querySelector(".dropdown-menu");
-let menuItems = drpMenu.querySelectorAll("li");
+const compTaskList = document.querySelector(".task-completed");
+const showCompTask = document.querySelector(".completed-tab");
 
-addBtn.addEventListener("click", () => drpMenu.classList.toggle("d-none"));
-menuItems.forEach((item) => {
-  item.addEventListener("click", () => drpMenu.classList.add("d-none"));
-});
+showCompTask.addEventListener("click", renderTask);
+function renderTask() {
+    document.querySelector(".fa-chevron-down").classList.toggle("d-none");
+    document.querySelector(".fa-chevron-up").classList.toggle("d-none");
+    compTaskList.classList.toggle("d-none");
+}

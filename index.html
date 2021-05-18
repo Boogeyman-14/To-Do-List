@@ -21,40 +21,38 @@
     <title>CHECK LIST</title>
   </head>
   <body class="bg-dark">
-    <section class="container mt-2">
-      <h3 class="text-center text-light mb-5 fs-1">
+    <section class="container pt-3 text-light">
+      <h3 class="text-center mb-5 fs-1">
         <i class="fas fa-clipboard-list"></i> Check List
       </h3>
       <div class="add-items d-flex justify-content-center align-items-center">
         <input
-          class="w-50 p-2 me-2 outline-none"
+          class="w-50 p-2 me-2"
           type="text"
-          id="addList"
+          id="val"
           placeholder="What do you want to get done today?"
         />
-        <div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-warning p-2">Add</button>
-            <button
-              type="button"
-              class="btn btn-warning dropdown-toggle dropdown-toggle-split"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            ></button>
-
-            <ul class="dropdown-menu d-block d-none">
-              <li><a class="dropdown-item" href="#">All tasks</a></li>
-              <li><a class="dropdown-item" href="#">Completed</a></li>
-              <li><a class="dropdown-item" href="#">Incomplete</a></li>
-            </ul>
-          </div>
-        </div>
+        <button class="btn btn-warning py-2 px-3" id="addli">Add</button>
       </div>
-      <div class="tasks text-light">
+      <div class="tasks task-all">
         <ul class="list-unstyled m-auto fs-4">
-          <li><span>Workout</span> <i class="far fa-trash-alt"></i></li>
-          <li><span>Shower</span> <i class="far fa-trash-alt"></i></li>
-          <li><span>Breakfast</span> <i class="far fa-trash-alt"></i></li>
+          <li><span>Task 1</span> <i class="far fa-trash-alt"></i></li>
+          <li><span>Task 2</span> <i class="far fa-trash-alt"></i></li>
+          <li><span>Task 3</span> <i class="far fa-trash-alt"></i></li>
+        </ul>
+      </div>
+    </section>
+    <section class="text-light container mt-4"  id="finished" >
+      <div class="completed-tab position-relative w-50 d-flex justify-content-start align-items-center ">
+        <i class="fas fa-chevron-down  d-none"></i>
+        <i class="fas fa-chevron-up"></i>
+        <h3 class="ms-3">Completed</h3>
+      </div>
+      <div class="tasks task-completed d-none">
+        <ul class="list-unstyled m-auto fs-4">
+          <li><span>Completed Item 1</span> <i class="far fa-trash-alt"></i></li>
+          <li><span>Completed Item 2</span> <i class="far fa-trash-alt"></i></li>
+          <li><span>Completed Item 3</span> <i class="far fa-trash-alt"></i></li>
         </ul>
       </div>
     </section>

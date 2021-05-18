@@ -1,21 +1,26 @@
 .tasks ul {
   width: 60%;
 }
-
 .tasks ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.8rem;
   margin-top: 1.5rem;
   background: #343a40;
   cursor: pointer;
 }
-
 .tasks ul li:first-child {
   margin-top: 2rem;
 }
-
 .tasks ul li:last-child {
   margin-bottom: 1rem;
+}
+.completed-tab {
+  left: 20%;
+  cursor: pointer;
+}
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 0 4px rgb(255, 193, 7);
 }

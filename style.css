@@ -1,26 +1,61 @@
-.tasks ul {
-  width: 60%;
+body {
+  overflow-x: hidden;
+  background-color: #cfe2ff;
 }
-.tasks ul li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem;
-  margin-top: 1.5rem;
-  background: #343a40;
+
+.col-auto:first-child {
+  width: 40vw;
+}
+
+.form-check-input {
   cursor: pointer;
+  padding: 0.6rem;
 }
-.tasks ul li:first-child {
-  margin-top: 2rem;
+
+.form-check-input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
-.tasks ul li:last-child {
-  margin-bottom: 1rem;
+
+.listTxt {
+  border: none;
+  width: 50%;
+  font-size: 1.2rem;
+  padding-left: 0.2rem;
+  background: inherit;
 }
-.completed-tab {
-  left: 20%;
-  cursor: pointer;
-}
-input[type="text"]:focus {
+
+.listTxt:focus {
   outline: none;
-  box-shadow: inset 0 0 4px rgb(255, 193, 7);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
+
+.list-group-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+}
+
+.list-group-item .icons {
+  margin-left: auto;
+}
+
+.list-group-item .icons .edit {
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.list-group-item .icons .del {
+  cursor: pointer;
+}
+
+.list-group-item + .list-group-item {
+  border-top-width: thin;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,9 +1,58 @@
-const compTaskList = document.querySelector(".task-completed");
-const showCompTask = document.querySelector(".completed-tab");
+let inputEl = document.querySelector("input");
+let ulEl = document.querySelector("ul");
+const addBtn = document.querySelector(".add");
 
-showCompTask.addEventListener("click", renderTask);
-function renderTask() {
-    document.querySelector(".fa-chevron-down").classList.toggle("d-none");
-    document.querySelector(".fa-chevron-up").classList.toggle("d-none");
-    compTaskList.classList.toggle("d-none");
+class Tasks {
+  constructor() {
+    addBtn.addEventListener("click", this.renderList.bind(this));
+  }
+  renderList(ev) {
+    ev.preventDefault();
+    if (inputEl.value === "") {
+      inputEl.focus();
+    } else {
+      this._newElements();
+    }
+    inputEl.value = "";
+  }
+  _newElements() {
+    const liEl = document.createElement("li");
+    liEl.setAttribute(
+      "class",
+      "list-group-item list-group-item-action list-group-item-primary"
+    );
+
+    const checkBox = document.createElement("input");
+    checkBox.setAttribute("class", "form-check-input me-1");
+    checkBox.type = "checkbox";
+
+    liEl.appendChild(checkBox);
+
+    const inputTxt = document.createElement("input");
+    inputTxt.classList.add("listTxt");
+    inputTxt.type = "text";
+    inputTxt.setAttribute("maxlength", "30");
+    inputTxt.value = `${inputEl.value}`;
+    inputTxt.readOnly = true;
+
+    liEl.appendChild(inputTxt);
+
+    const iconsDiv = document.createElement("div");
+    iconsDiv.classList.add("icons");
+
+    const imgEdit = new Image(25);
+    imgEdit.src = "icons/edit.png";
+    imgEdit.classList.add("edit");
+    iconsDiv.appendChild(imgEdit);
+
+    const imgDel = new Image(25);
+    imgDel.src = "icons/remove.png";
+    imgDel.classList.add("del");
+    iconsDiv.appendChild(imgDel);
+
+    liEl.appendChild(iconsDiv);
+    ulEl.appendChild(liEl);
+  }
 }
+
+const myTasks = new Tasks();

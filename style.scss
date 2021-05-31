@@ -1,0 +1,48 @@
+body {
+  overflow-x: hidden;
+  background-color: #cfe2ff;
+}
+.col-auto {
+  &:first-child {
+    width: 40vw;
+  }
+}
+.form-check-input {
+  cursor: pointer;
+  padding: 0.6rem;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.listTxt {
+  border: none;
+  width: 50%;
+  font-size: 1.2rem;
+  padding-left: 0.2rem;
+  background: inherit;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+  .icons {
+    margin-left: auto;
+    .edit {
+      margin-right: 0.75rem;
+      cursor: pointer;
+    }
+    .del {
+      cursor: pointer;
+    }
+  }
+  & + .list-group-item {
+    border-top-width: thin;
+  }
+}

@@ -1,10 +1,12 @@
 let inputEl = document.querySelector("input");
 let ulEl = document.querySelector("ul");
 const addBtn = document.querySelector(".add");
+const clearAllBtn = document.querySelector(".clear");
 
 class Tasks {
   constructor() {
     addBtn.addEventListener("click", this.renderList.bind(this));
+    clearAllBtn.addEventListener("click", this._clearAllList.bind(this));
     ulEl.addEventListener("click", this._multiEventHandlers.bind(this));
   }
   renderList(ev) {
@@ -47,8 +49,12 @@ class Tasks {
   }
   _deleteList(li, del) {
     if (del) {
-        li.remove();
+      li.remove();
     }
+  }
+  _clearAllList(e) {
+    e.preventDefault();
+    ulEl.innerHTML = "";
   }
   _newElements() {
     const liEl = document.createElement("li");

@@ -49,7 +49,11 @@ class Tasks {
   }
   _deleteList(li, del) {
     if (del) {
-      li.remove();
+      li.classList.add("animate__animated", "animate__fadeOutRight");
+      li.style.setProperty("--animate-duration", "1s");
+      setTimeout(() => {
+        li.remove();
+      }, 900);
     }
   }
   _clearAllList(e) {
@@ -92,6 +96,8 @@ class Tasks {
     iconsDiv.appendChild(imgDel);
 
     liEl.appendChild(iconsDiv);
+    liEl.classList.add("animate__animated", "animate__fadeInDown");
+    liEl.style.setProperty("--animate-duration", "1.3s");
     ulEl.appendChild(liEl);
   }
 }

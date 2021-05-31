@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden;
-  background-color: #cfe2ff;
+  background-color: #bcd7ff;
 }
 .col-auto {
   &:first-child {
@@ -44,6 +44,9 @@ body {
   }
   & + .list-group-item {
     border-top-width: thin;
+  }
+  &:last-child{
+    margin-bottom: 1.5rem;
   }
 }
 .op {

@@ -5,6 +5,7 @@ const addBtn = document.querySelector(".add");
 class Tasks {
   constructor() {
     addBtn.addEventListener("click", this.renderList.bind(this));
+    ulEl.addEventListener("click", this._multiEventHandlers.bind(this));
   }
   renderList(ev) {
     ev.preventDefault();
@@ -14,6 +15,40 @@ class Tasks {
       this._newElements();
     }
     inputEl.value = "";
+  }
+  _multiEventHandlers(e) {
+    const listEl = e.target.closest("li");
+    const isSelected = listEl.firstElementChild;
+    const textContent = isSelected.nextElementSibling;
+    const editEl = e.target.classList.value === "edit";
+    const delEl = e.target.classList.value === "del";
+    this._markAsCompleted(listEl, isSelected, textContent);
+    this._editList(editEl, isSelected, textContent);
+    this._deleteList(listEl, delEl);
+  }
+  _markAsCompleted(li, isSelected, txt) {
+    if (isSelected.checked === true) {
+      txt.classList.add("text-secondary", "text-decoration-line-through");
+      li.classList.add("list-group-item-success", "op");
+      li.classList.remove("list-group-item-primary");
+      isSelected.classList.add("op");
+    } else {
+      txt.classList.remove("text-secondary", "text-decoration-line-through");
+      li.classList.add("list-group-item-primary");
+      li.classList.remove("list-group-item-success", "op");
+      isSelected.classList.remove("op");
+    }
+  }
+  _editList(allowEdit, checkbox, txt) {
+    if (allowEdit && !checkbox.checked) {
+      txt.readOnly = false;
+      txt.focus();
+    }
+  }
+  _deleteList(li, del) {
+    if (del) {
+        li.remove();
+    }
   }
   _newElements() {
     const liEl = document.createElement("li");

@@ -58,4 +58,8 @@ body {
 .list-group-item + .list-group-item {
   border-top-width: thin;
 }
+
+.op {
+  opacity: 0.8 !important;
+}
 /*# sourceMappingURL=style.css.map */
